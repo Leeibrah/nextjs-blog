@@ -1,11 +1,20 @@
 {
   "name": "learn-starter",
   "version": "0.1.0",
-  "private": true,
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "dev": "next dev",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start"
+    "start": "next start -p 8800",
+    "test": "NODE_ENV=test jest",
+    "test:watch": "NODE_ENV=test jest --watch",
+    "test:coverage": "NODE_ENV=test jest --coverage",
+    "test:cypress": "NODE_ENV=test cypress open",
+    "lint": "eslint .",
+    "lint:watch": "esw . --watch --cache",
+    "lint:watchAll": "esw . --watch",
+    "circleci:run": "circleci local execute --job $JOB"
   },
   "dependencies": {
     "date-fns": "^2.22.1",
